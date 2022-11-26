@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> with type=number should render 1`] = `
+<DocumentFragment>
+  <input
+    name="name"
+    type="number"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`<Input /> with type=text should render 1`] = `
+<DocumentFragment>
+  <input
+    name="name"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
