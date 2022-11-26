@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should render with type=button 1`] = `
+<DocumentFragment>
+  <button
+    type="button"
+  >
+    Button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Button /> should render with type=reset 1`] = `
+<DocumentFragment>
+  <button
+    type="reset"
+  >
+    Button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Button /> should render with type=submit 1`] = `
+<DocumentFragment>
+  <button
+    type="submit"
+  >
+    Button
+  </button>
+</DocumentFragment>
+`;
