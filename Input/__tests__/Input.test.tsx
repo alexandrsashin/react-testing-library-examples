@@ -1,10 +1,5 @@
-import {
-  cleanup,
-  fireEvent,
-  screen,
-  render,
-  RenderResult,
-} from "@testing-library/react";
+import { cleanup, screen, render, RenderResult } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import Input from "..";
 
 const onChange = jest.fn();
@@ -28,10 +23,10 @@ describe("<Input />", () => {
       expect(view.asFragment()).toMatchSnapshot();
     });
 
-    it("onChange() is called after input change", () => {
+    it("onChange() is called after input change", async () => {
       const input = screen.getByRole("textbox");
 
-      fireEvent.change(input, { target: { value: "test text" } });
+      await userEvent.type(input, "test text");
       expect(onChange).toHaveBeenCalledWith({
         name: "name",
         value: "test text",
@@ -56,10 +51,10 @@ describe("<Input />", () => {
       expect(view.asFragment()).toMatchSnapshot();
     });
 
-    it("onChange() is called after input change", () => {
+    it("onChange() is called after input change", async () => {
       const input = screen.getByRole("spinbutton");
 
-      fireEvent.change(input, { target: { value: "4" } });
+      await userEvent.type(input, "4");
       expect(onChange).toHaveBeenCalledWith({
         name: "name",
         value: "4",

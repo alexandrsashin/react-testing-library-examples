@@ -1,10 +1,5 @@
-import {
-  cleanup,
-  screen,
-  render,
-  RenderResult,
-  fireEvent,
-} from "@testing-library/react";
+import { cleanup, screen, render, RenderResult } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import Button from "..";
 
 const onClick = jest.fn();
@@ -47,7 +42,7 @@ describe("<Button />", () => {
     expect(view.asFragment()).toMatchSnapshot();
   });
 
-  it("onClick() is called after click", () => {
+  it("onClick() is called after click", async () => {
     render(
       <Button type="button" onClick={onClick}>
         Button
@@ -55,7 +50,7 @@ describe("<Button />", () => {
     );
     const button = screen.getByRole("button", { name: "Button" });
 
-    fireEvent.click(button);
+    await userEvent.click(button);
     expect(onClick).toHaveBeenCalled();
   });
 });
